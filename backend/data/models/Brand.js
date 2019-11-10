@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const conn = require('../connection');
 
 const {
-  UUID, UUIDV4, STRING, INTEGER, TEXT,
+  UUID, UUIDV4, STRING, INTEGER, TEXT, BOOLEAN,
 } = Sequelize;
 
 const Brand = conn.define('brand', {
@@ -47,6 +47,10 @@ const Brand = conn.define('brand', {
       min: 0,
       max: 5,
     },
+  },
+  favorite: {
+    type: BOOLEAN,
+    defaultValue: false,
   },
 });
 
